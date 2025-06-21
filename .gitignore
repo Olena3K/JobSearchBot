@@ -3,3 +3,4 @@ __pycache__/
 .env
 bot.log
 *.pyc
+.DS_Store
