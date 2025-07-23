@@ -7,10 +7,8 @@ from aiogram.types import Message, CallbackQuery, ReplyKeyboardMarkup, KeyboardB
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from parser import search_workua_jobs
 
-# Завантаження змінних із .env
 load_dotenv()
 
-# Налаштування логування
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
@@ -18,7 +16,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Завантаження токена
 TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     logger.error("Токен бота не знайдено!")
@@ -30,7 +27,6 @@ router = Router()
 dp.include_router(router)
 
 
-# Створення Reply Keyboard з готовими запитами
 def get_search_keyboard():
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
